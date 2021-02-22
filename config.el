@@ -52,3 +52,17 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; set init frame logo
+(setq fancy-splash-image (concat doom-private-dir "logo.png"))
+
+;; change init frame size
+;; (pushnew! initial-frame-alist '(width . 280) '(height . 75))
+(add-hook 'window-setup-hook #'toggle-frame-maximized)
+;; (add-hook 'window-setup-hook #'toggle-frame-fullscreen)
+
+;; https://github.com/redguardtoo/emacs.d/blob/8ea127c69cd6e5d6dbbe2c1dce91131c4a4c0cd2/lisp/init-evil.el#L236
+;; Press kj to escape from evil-insert-state and everything else in Emacs. It’s much more efficient than ESC in Vim or C-g in Emacs
+(setq-default evil-escape-delay 0.3)
+(setq evil-escape-excluded-major-modes '(dired-mode))
+(setq-default evil-escape-key-sequence "kj")
