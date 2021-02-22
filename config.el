@@ -66,3 +66,23 @@
 (setq-default evil-escape-delay 0.3)
 (setq evil-escape-excluded-major-modes '(dired-mode))
 (setq-default evil-escape-key-sequence "kj")
+
+;; org-super-agenda
+;; (use-package! org-super-agenda
+;;   :after org-agenda
+;;   :init
+;;   (setq org-super-agenda-groups '((:name "Today"
+;;                                    :time-grid t
+;;                                    :scheduled today)
+;;                                   (:name "Due today"
+;;                                    :deadline today)
+;;                                   (:name "Important"
+;;                                    :priority "A")
+;;                                   (:name "Overdue"
+;;                                    :deadline past)
+;;                                   (:name "Due soon"
+;;                                    :deadline future)
+;;                                   (:name "Big Outcomes"
+;;                                    :tag bo)))
+;;   :config
+;;   (org-super-agenda-mode))
