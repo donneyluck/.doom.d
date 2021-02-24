@@ -55,8 +55,9 @@
 ;; they are implemented.
 
 (after! org
-  (setq org-tags-column -80))
-
+  (setq org-tags-column -80)
+  ;;(set-face-attribute 'org-headline-done nil :strike-through t))
+)
 
 ;; set init frame logo
 (setq fancy-splash-image (concat doom-private-dir "logo.png"))
