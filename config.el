@@ -25,7 +25,8 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-tomorrow-night)
+;;(setq doom-theme 'doom-tomorrow-night)
+(setq doom-theme 'deeper-blue)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -53,6 +54,10 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(after! org
+  (setq org-tags-column -80))
+
+
 ;; set init frame logo
 (setq fancy-splash-image (concat doom-private-dir "logo.png"))
 
@@ -67,22 +72,21 @@
 (setq evil-escape-excluded-major-modes '(dired-mode))
 (setq-default evil-escape-key-sequence "kj")
 
-;; org-super-agenda
-;; (use-package! org-super-agenda
-;;   :after org-agenda
-;;   :init
-;;   (setq org-super-agenda-groups '((:name "Today"
-;;                                    :time-grid t
-;;                                    :scheduled today)
-;;                                   (:name "Due today"
-;;                                    :deadline today)
-;;                                   (:name "Important"
-;;                                    :priority "A")
-;;                                   (:name "Overdue"
-;;                                    :deadline past)
-;;                                   (:name "Due soon"
-;;                                    :deadline future)
-;;                                   (:name "Big Outcomes"
-;;                                    :tag bo)))
-;;   :config
-;;   (org-super-agenda-mode))
+;; (setq mac-option-modifier 'meta
+;;           mac-command-modifier 'super)
+
+
+(use-package! company-tabnine
+  :config
+  (setq company-show-numbers t)
+  (add-to-list 'company-backends #'company-tabnine))
+
+(use-package! org-bullets
+  :hook (org-mode . org-bullets-mode))
+
+(use-package! org-fancy-priorities
+  :ensure t
+  :hook
+  (org-mode . org-fancy-priorities-mode)
+  :config
+  (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕")))
