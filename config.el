@@ -91,3 +91,7 @@
   (org-mode . org-fancy-priorities-mode)
   :config
   (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕")))
+
+(setq deft-directory "~/org"
+      deft-extensions '("org" "txt")
+      deft-recursive t)
