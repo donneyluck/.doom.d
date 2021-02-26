@@ -76,12 +76,6 @@
 ;; (setq mac-option-modifier 'meta
 ;;           mac-command-modifier 'super)
 
-
-(use-package! company-tabnine
-  :config
-  (setq company-show-numbers t)
-  (add-to-list 'company-backends #'company-tabnine))
-
 (use-package! org-bullets
   :hook (org-mode . org-bullets-mode))
 
