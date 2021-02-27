@@ -57,7 +57,37 @@
 (after! org
   (setq org-tags-column -80)
   ;;(set-face-attribute 'org-headline-done nil :strike-through t))
-)
+  )
+
+;; (use-package! company-tabnine
+;;   :config
+;;   (after! lua-mode
+;;     (set-company-backend! 'lua-mode 'company-tabnine)))
+
+(use-package! company-tabnine
+  :after company
+  :when (featurep! :completion company)
+  :config
+  (cl-pushnew 'company-tabnine (default-value 'company-backends))
+    ;; Trigger completion immediately.
+   (setq company-idle-delay 0)
+
+  ;; Number the candidates (use M-1, M-2 etc to select completions).
+  (setq company-show-numbers t)
+
+  ;; Use the tab-and-go frontend.
+  ;; Allows TAB to select and complete at the same time.
+  ;;(company-tng-configure-default)
+  ;; (setq company-frontends
+  ;;       '(company-tng-frontend
+  ;;         company-pseudo-tooltip-frontend
+  ;;         company-echo-metadata-frontend))
+  )
+
+(after! lua-mode
+  (setq lsp-clients-lua-language-server-bin "~/open_source/lua-language-server"
+        lsp-clients-lua-language-server-main-location "~/open_source/lua-language-server"
+        lsp-clients-lua-language-server-command "./bin/macOS/lua-language-server -E ./main.lua"))
 
 ;; set init frame logo
 (setq fancy-splash-image (concat doom-private-dir "logo.png"))
