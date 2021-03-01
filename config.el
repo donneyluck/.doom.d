@@ -34,7 +34,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type nil)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
@@ -64,16 +64,16 @@
 ;;   (after! lua-mode
 ;;     (set-company-backend! 'lua-mode 'company-tabnine)))
 
-(use-package! company-tabnine
-  :after company
-  :when (featurep! :completion company)
-  :config
-  (cl-pushnew 'company-tabnine (default-value 'company-backends))
-    ;; Trigger completion immediately.
-   (setq company-idle-delay 0)
+;; (use-package! company-tabnine
+;;   :after company
+;;   :when (featurep! :completion company)
+;;   :config
+;;   (cl-pushnew 'company-tabnine (default-value 'company-backends))
+;;     ;; Trigger completion immediately.
+;;    (setq company-idle-delay 0)
 
-  ;; Number the candidates (use M-1, M-2 etc to select completions).
-  (setq company-show-numbers t)
+;;   ;; Number the candidates (use M-1, M-2 etc to select completions).
+;;   (setq company-show-numbers t)
 
   ;; Use the tab-and-go frontend.
   ;; Allows TAB to select and complete at the same time.
@@ -82,7 +82,7 @@
   ;;       '(company-tng-frontend
   ;;         company-pseudo-tooltip-frontend
   ;;         company-echo-metadata-frontend))
-  )
+;;)
 
 
 ;; set init frame logo
@@ -99,21 +99,21 @@
 (setq evil-escape-excluded-major-modes '(dired-mode))
 (setq-default evil-escape-key-sequence "kj")
 
-;; (setq mac-option-modifier 'meta
-;;           mac-command-modifier 'super)
+ ;; (setq mac-option-modifier 'super
+ ;;           mac-command-modifier 'mate)
 
-(use-package! org-bullets
-  :hook (org-mode . org-bullets-mode))
+;; (use-package! org-bullets
+;;   :hook (org-mode . org-bullets-mode))
 
-(use-package! org-fancy-priorities
-  :ensure t
-  :hook
-  (org-mode . org-fancy-priorities-mode)
-  :config
-  (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕")))
+;; (use-package! org-fancy-priorities
+;;   :ensure t
+;;   :hook
+;;   (org-mode . org-fancy-priorities-mode)
+;;   :config
+;;   (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕")))
 
-(setq deft-directory "~/org"
-      deft-extensions '("org" "txt")
-      deft-recursive t)
+;; (setq deft-directory "~/org"
+;;       deft-extensions '("org" "txt")
+;;       deft-recursive t)
 
-(use-package! color-theme-sanityinc-tomorrow)
+;; (use-package! color-theme-sanityinc-tomorrow)
