@@ -84,10 +84,6 @@
   ;;         company-echo-metadata-frontend))
   )
 
-(after! lua-mode
-  (setq lsp-clients-lua-language-server-bin "~/open_source/lua-language-server"
-        lsp-clients-lua-language-server-main-location "~/open_source/lua-language-server"
-        lsp-clients-lua-language-server-command "./bin/macOS/lua-language-server -E ./main.lua"))
 
 ;; set init frame logo
 (setq fancy-splash-image (concat doom-private-dir "logo.png"))
@@ -119,3 +115,5 @@
 (setq deft-directory "~/org"
       deft-extensions '("org" "txt")
       deft-recursive t)
+
+(use-package! color-theme-sanityinc-tomorrow)
