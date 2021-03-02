@@ -53,4 +53,4 @@
 ;; (package! org-fancy-priorities)
 ;; (package! company-tabnine)
 ;; (package! color-theme-sanityinc-tomorrow)
-;; (package! keyfreq)
+(package! keyfreq)
