@@ -117,3 +117,7 @@
 ;;       deft-recursive t)
 
 ;; (use-package! color-theme-sanityinc-tomorrow)
+(use-package! keyfreq
+  :config
+  (keyfreq-mode 1)
+)
