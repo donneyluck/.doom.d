@@ -54,3 +54,5 @@
 ;; (package! company-tabnine)
 ;; (package! color-theme-sanityinc-tomorrow)
 (package! keyfreq)
+;;(package! google-translate)
+(package! youdao-dictionary)

@@ -122,6 +122,15 @@
   (keyfreq-mode 1)
   )
 
+;; (use-package! google-translate
+;;   :config
+;;   (require 'google-translate-smooth-ui)
+;; (global-set-key "\C-ct" 'google-translate-smooth-translate))
+(use-package! youdao-dictionary
+  :bind
+  (("C-c y" . youdao-dictionary-search-at-point))
+  :config
+  (setq url-automatic-caching t))
 
 ;;------------------------------------------------------------------------------
 ;; Toggle between light and dark
