@@ -120,4 +120,20 @@
 (use-package! keyfreq
   :config
   (keyfreq-mode 1)
-)
+  )
+
+
+;;------------------------------------------------------------------------------
+;; Toggle between light and dark
+;;------------------------------------------------------------------------------
+(defun light ()
+  "Activate a light color theme."
+  (interactive)
+  (setq doom-theme 'doom-acario-light)
+  (doom/reload-theme))
+
+(defun dark ()
+  "Activate a dark color theme."
+  (interactive)
+  (req doom-theme 'deeper-blue)
+  (doom/reload-theme))
