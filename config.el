@@ -26,7 +26,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 ;;(setq doom-theme 'doom-tomorrow-night)
-(setq doom-theme 'deeper-blue)
+(setq doom-theme 'tsdh-dark)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -102,15 +102,15 @@
  ;; (setq mac-option-modifier 'super
  ;;           mac-command-modifier 'mate)
 
-;; (use-package! org-bullets
-;;   :hook (org-mode . org-bullets-mode))
+(use-package! org-bullets
+  :hook (org-mode . org-bullets-mode))
 
-;; (use-package! org-fancy-priorities
-;;   :ensure t
-;;   :hook
-;;   (org-mode . org-fancy-priorities-mode)
-;;   :config
-;;   (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕")))
+(use-package! org-fancy-priorities
+  :ensure t
+  :hook
+  (org-mode . org-fancy-priorities-mode)
+  :config
+  (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕")))
 
 ;; (setq deft-directory "~/org"
 ;;       deft-extensions '("org" "txt")

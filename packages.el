@@ -49,8 +49,8 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-;; (package! org-bullets)
-;; (package! org-fancy-priorities)
+(package! org-bullets)
+(package! org-fancy-priorities)
 ;; (package! company-tabnine)
 ;; (package! color-theme-sanityinc-tomorrow)
 (package! keyfreq)
