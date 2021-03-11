@@ -56,6 +56,7 @@
 
 (after! org
   (setq org-tags-column -80)
+  ;; (org-toggle-inline-images t)
   ;;(set-face-attribute 'org-headline-done nil :strike-through t))
   )
 
@@ -99,8 +100,13 @@
 (setq evil-escape-excluded-major-modes '(dired-mode))
 (setq-default evil-escape-key-sequence "kj")
 
+;; defalut not display
+(after! fill-column
+  ;; (global-display-fill-column-indicator-mode -1)
+  )
  ;; (setq mac-option-modifier 'super
  ;;           mac-command-modifier 'mate)
+:
 
 (use-package! org-bullets
   :hook (org-mode . org-bullets-mode))
